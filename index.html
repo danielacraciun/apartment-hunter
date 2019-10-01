@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <link href="css/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sc.min.css">
+    <style type="text/css">
+        .transbox {
+            background-color: rgba(45, 50, 53, 0.6);
+            border-radius: 30px;
+            text-align: center;
+            line-height: 250px;
+            color: white;
+            margin: 0 auto;
+        }
+        .container{
+            display: flex;
+        }
+        .col{
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="files/mainbg.jpg">
+                <div class="transbox">
+                    <h2 class="mainhead"> Apartment Hunter </h2>
+                    <h4>AUTOMATING FOR A BETTER LIFE</h4>
+                </div>
+            </section>
+            <section>
+                <h2>Hi! I'm Dana <i class="em-svg em-wave"></i></h2>
+                <ul>
+                    <li class="fragment" data-fragment-index="1"> Software Engineer @ Delivery Hero </li>
+                    <li class="fragment" data-fragment-index="2"> Passionate about Python </li>
+                    <li class="fragment" data-fragment-index="3">Find me on GitHub at <a href="https://github.com/danielacraciun">@danielacraciun</a></li>
+                </ul>
+                <aside class="notes">
+                    Let me introduce myself. I’m Daniela Craciun, but I usually go by Dana. 
+                    I’m been working as a software engineer at Delivery Hero.
+                    I'm very passionate about Python, and the more I use it the more I'm fascinated how far it can take you.
+                    I usually work with web applications and cloud technologies, but this presentation has nothing to do with that.
+                    It's about a personal project I've been working on for a while now, which was an opportunity for me to play around with some interesting technologies.
+                </aside>
+            </section>
+            <section>
+                <h3>Task: 
+                <br />looking for an apartment to rent <i class="em-svg em-house_buildings"></i>
+                </h3>
+                <br /> and also...
+                <aside class="notes">
+                    So, what am I trying to do? Find a apartment to rent that suits me.
+                    This can get frustrating and time consuming, fast.
+                    This is all about how I built an apartment finder & real estate market helper (to demystify it, that is). 
+                    I found myself in a situation where I had no idea what price was fair for the offers I was looking at, so I accepted a less than ideal one. I wanted to move again, but I wanted to do it right. So, I needed more knowledge about how the market looks.
+                    My solution for this task is to automatize the look up process and have access to information about the market.
+                </aside>                
+            </section>
+            <section>
+                <h3>Main goals</h3>
+                <ul>
+                <li class="fragment" data-fragment-index="1"> Learn </li>
+                <li class="fragment" data-fragment-index="3"> Inspire </li>
+                <li class="fragment" data-fragment-index="4"> HAVE FUN! </li>
+                <br /><div class="fragment" data-fragment-index="5">... and maybe ...
+                <li class="fragment" data-fragment-index="6"> find an apartment for myself? <i class="em-svg em-mag"></i></li>
+                </ul>
+                 <aside class="notes">
+                    You might be asking yourself: is this all just to find an apartment to rent?
+                    
+                    The main goal was to learn more, to grow and experiment. To inspire others to try and leverage their technical skills to delegate tasks to technology, or otherwise improve their lives through automation. To have fun, cause that's what side projects are all about! and maybe to even find an apartment, why not.
+                </aside>               
+            </section>
+            <section>
+                
+                <h2>also, DON'T expect</h2>
+                <div class="fragment" data-fragment-index="1">
+                <ul>
+                    <li>innovation (so many other options out there!)</li>
+                    <li>expert level knowledge</li>
+                </ul> 
+                </div>
+                
+                <h2 class="fragment" data-fragment-index="2">however, DO...</h2>
+                <div  class="fragment" data-fragment-index="3">
+                <ul>
+                    <li>give me advice on how to improve</li>
+                    <li>talk to me about your own data analysis projects</li>
+                    <li>use what you learn here</li>
+                </ul>
+                </div>
+                <aside class="notes">
+                    I'm by no means an expert in any of the technologies mentioned here, I just built this for fun & (self) profit, so don't take it too seriously. 
+                    I'm also aware that this has been done before, and there's other options out there, that automatize at least a part of the flow proposed by me. You can use page monitors, real estate websites & website aggregators for ads notifications and sometimes the government provides statistics about the real estate market. But finding an apartment was not the main goal here.
+                    But do give me advice on anything you think I can improve & help me out. Also, use what I say/built it to build something of your own. That would make me very happy. 
+                </aside>
+            </section>
+            <section>
+                What is this all about? 
+                <br />
+                <br />
+                <div class="container">
+                    <div class="col">
+                        <img class="plain" src="files/arch.png">
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Data gathering & storing (Scraping unit)</li>
+                            <li>Data cleaning & analysis (Exploration unit)</li>
+                            <li>Notification unit</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    So basically the project has 3 separate unit: gathering data via scraping, cleaning & analysing data in Jupyter notebooks using pandas and some visualizations tools and notification unit which sends alerts as apartments of interest are found.
+                    From a data science perspective, I'm obtaining, scrubbing and exploring the data, so doing the work of a data analyst.
+                    The next obvious steps would be modelling and interpreting, but since I only needed an understanding of the real estate market, not any forecasting, this was out of scope. The project is ready for and might move to the next 2 steps as well.
+                </aside>
+            </section>            
+            <section>
+                so, how did I do it?
+            </section>
+            <section>
+                <h2>Scraping</h2>
+                <aside class="notes">
+                    Who where has done any scraping before?
+                    Data gathering was done by scraping a few selected websites which have real estate ads.
+                    I started the data gathering around 6 months ago, and I'm currently gathering around 100 (mostly) unique ads per day.
+                </aside>
+            </section>
+            <section>
+                <h3>Technology used:</h3>
+                <img src="files/scrapy.png">
+
+                <br /> Why did I choose it?
+                <br />
+                <br />
+                <ul>
+                    <li>Fast & reliable</li>
+                    <li>Fit my purpose very well</li>
+                    <li>Extensive documentation</li>
+                </ul> 
+                <aside class="notes">
+                    Scrapy is a great tool (stable, easy to get started with, but probably gets more complicated as you have more complex requirements, but it was a great fit for me), and it's a really pleasant framework to write code in.
+                    I'm providing an overview of some features I leveraged, but they are not exhaustive and I'm not providing a full explanation; since the docs are excellent I highly recommend them if you do want to use it.
+                </aside>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="col">
+                        <h3>Ads list</h3>
+                        <img class="plain" src="files/ad_list.png">
+                    </div>
+                    <div class="col">
+                        <h3>Individual ad</h3>
+                        <img class="plain" src="files/anony.jpg">
+                    </div>
+                </div>
+                <small>source: olx.ro</small>
+                <aside class="notes">
+                    I was saying it fits my purpose very well, because it supported my use case (since I guess it's a common workflow to have when working with scrapers) and allowed me to move from prototype to something that works, fast!
+
+                    Basically, I have 2 types of pages I need to parse: ad lists and individual ads. You can see an example on the current slides. These are cars, but basically it's the same for apartments. Each ad list is assumed to contain a link to an upcoming ad page. I have circled it in my image.
+
+                    The scrapy building block is a Spider class, which allows you to define how you want to parse the website. I built a custom scraper on top of this, that performs the behavior described above (basically, ad list -> get & scrape every ad -> next ad page).
+
+                    Scrapy gives you many ooportunities to customize the scrapers behavior, during and after the scraping has finished. I rely on it to format the data and store it as well.
+                </aside>            
+            </section>
+            <section>
+                <h2>Selectors</h2>
+<pre class="html"><code data-trim>
+<div>
+<h1 id="title-text"> Main title </h1>
+<h1> Not the main title </h1>
+</div></code></pre>
+<pre class="python"><code data-trim>
+# Selectors
+# XPath
+'//h1[@id="title-text"]'
+# CSS
+'.title-text::text'</code></pre>                 
+                <aside class="notes">
+                    To extract the fields I needed, I need to get the values from the HTML, and this is done used selectors. They are either XPaths, or CSS based.
+                    For example, let's say you want the 'Main title' from this snippet. Here's how you would do it with each of them. Of course, they can get more complicated.
+                    But a few things to keep in mind, it's better to kkeep the concise & precise, shorter is better.
+                    They are the bread & butter of my customer scraper. When using it, after inputting the XPaths for the required fields, more than 80% of the work is done.
+                </aside>                   
+            </section>
+            <section>
+                <h2>Data fields</h2>
+                <div class="container">
+                    <div class="col">
+                        <h4>Scraped</h4>
+                    <ul>
+                        <li>title & description</li>
+                        <li>price & currency</li>
+                        <li>surface & number of rooms</li>
+                        <li>building year</li>
+                        <li>floor</li>
+                        <li>posted date</li> 
+                        <li>source of offer</li>                                        
+                    </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <h4>Determined</h4>
+                            <li>neighborhood</li>
+                            <li>amenities (terrace, parking, storage)</li>
+                            <h4>Others</h4>
+                            <li>source_website</li>
+                            <li>link</li>
+                            <li>scraped_date</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    After scraping, I get items as output. I store them in a Postgres database using SQLAlchemy and Scrapy's pipelines, which basically allow you to enrich or store your data after scraping.
+
+                    I am currently storing the current fields for each entry I have. 
+                    Scraped fields are being fetched from the individual ad page.
+
+                    Determined fields are the result of post-processing the ad title & description, looking for certain keywords. Not the most reliable.
+
+                    The are other fields (like the link to the ad) that have no statistical value, but are useful for other processes (like the notification one).
+                </aside> 
+            </section> 
+            <section>
+                How & when do they run
+                <ul>
+                    <li> Docker + cronjobs </li>
+                    <li> Timing influenced by need of alerting </li>
+                </ul>
+                <aside class="notes">
+                    Created docker image for an individual scraper, and have each scraper running according to a set schedule in cronjobs. In total I am scraping 5 websites, with different frequency.
+
+                    The schedule is set up in such a way that I get notification during the day, at hours at which it is still all right to contact the person posting the ad.When I wasn't expecting notifs, I was running during off-peak ours to minimize the load on the server.
+                </aside>
+            </section>            
+            <section>
+                <h2>Nice scraping</h2>
+                <ul>
+                    <li>obey robots.txt</li>
+                    <li>throttle & delays</li>
+                    <li>apropriate user agent</li>
+                    <li>scrape only what is needed</li>
+                </ul>
+                <pre class="python"><code data-trim>ROBOTSTXT_OBEY = True
+USER_AGENT = 'My Scraper(me@company.com)'
+DOWNLOAD_DELAY = 5
+AUTOTHROTTLE_ENABLED = True
+CLOSESPIDER_ITEMCOUNT = 100</code></pre> 
+<br><br>
+                <footer><small>
+                    <a href="https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy">Scrapinghub's polite scraping guide</a>
+                </footer></small>
+                <aside class="notes">
+                    I got banned at first, since I was slamming the website servers.
+                    Scrapy offers good methods of being nice while scraping, and offer a guide for polite scraping too. Basically,
+                    Obey robots.txt file, which tell you where you're allowed to go on the website
+                    Add throttling to make sure you're not hitting the servers too much
+                    Have a well written, identifying user agent
+                    If possible, limit the number of pages you scrape. For me, I observed that usually not more than 100 ads are posted per day per website, so I limited my scraping at that.
+                    Scrapy offers the possibility to set all of these out of the box, so with a few easy settings you are on the way to scraping the web mindfully. AUTOTHROTTLE even adjusts delays based on current web server load, according to the website capacity, and that's super helpful.
+                </aside> 
+            </section>
+            <section>
+                <h2> Other issues </h2>
+                 <ul>
+                    <li> Websites change </li>
+                    <li> Backups are important </li>
+                    <li> Data quality is not entirely up to you </li>
+                </ul> 
+                <aside class="notes">
+                    Even with a simple, small scale scraping task like I did, you can encounter problems.
+                    - websites change structure (some even obfuscate their css, making the selectors look like garbage and hard to have them concise)
+                    - this is beyond scraping and goes without saying, but if you store data, you need backups, I learned this the hard way after losing all of my data in the very beginning
+                    - there are going to be duplicates, mislabeling, typos — and the only thing you can do is identify these issues, clean your data and hope for the best! achieving great data quality is not an easy task, plus we all know all apartment owners will label their apartment as new, with modern furniture, placed in the center when the reality can be a bit... different.
+                </aside>
+            </section>
+            <section>
+            <h2>Real estate ads say...</h2>
+            </section>
+            <section>
+            <h4> Vintage, but in very good condition! </h4>
+            <img class="plain fragment" src="files/vintage.jpg" data-fragment-index="1">
+            </section>
+            <section>
+            <h4> Good area, close to the center! </h4>
+            <img class="plain fragment" src="files/lonely.jpg" data-fragment-index="1">
+            </section>
+            <section>
+                <h2>Data analysis</h2>
+                <h3>Case study: Cluj-Napoca</h3>
+                <aside class="notes">
+                Data is being gathered... but how do I know if I'm getting a good deal? 
+
+                What did I want to know?
+                    - average prices by area
+                    - how many apartments are there in my preferred areas?
+                    - how are the prices in relation to the previous months?
+                Solution: a general purpose Jupyter notebook that allows me to load a dataset (for the whole 6 months, or just for one month) and get an overview of the market
+                
+                </aside>
+            </section>
+            <section><h4>Getting started with Jupyter</h4>
+<pre class="bash"><code data-trim>$ pip install jupyter
+$ jupyter notebook</code></pre> 
+<h4><a href=''>on to the data!</a></h4>
+                <aside class="notes">
+                Who here has worked with Jupyter notebooks before?
+                They are quite easy to install and get started with.
+                Just install it using pip, and load it with the given command. You'll get access to a very intuitive user interface.
+
+                Now let's interact with the data!
+                While the data I'm exploring might not be interesting (unless you are looking for rent in Cluj), it's helpful to know how to get started in processing a dataset, especially when you don't come from a data science background.
+
+                Now moving on to another interface, of Jupyter notebook.
+                </aside>
+            </section>
+            <section id="jump-back">
+                <h3>Notification: Telegram bot <i class="em-svg em-robot_face"></i></h3>
+                <ul>
+                    <li> 
+                    create a bot using a bot: <a href="https://web.telegram.org/#/im?p=botfather">@botfather</a>
+                    </li>
+                    <li> implemented using python-telegram-bot </li>
+                    <pre class="python"><code data-trim>from telegram.ext import Updater, CommandHandler
+
+def hi(update, context):
+    update.message.reply_text('Hi!')
+
+
+if __name__ == '__main__':
+    updater = Updater('bot_token', use_context=True)
+    updater.dispatcher.add_handler(CommandHandler('hi', hi))
+    updater.start_polling()
+    updater.idle()</code></pre> 
+                </li>
+                </ul> 
+                <aside class="notes">
+                    Telegram is a messaging app, just like WhatsApp or Facebook Messenger.
+                    Creating a bot on Telegram is very simple, just ping @botfather on Telegram, and the process is quick and straightforward, then you'll get a new shiny bot with a API token to be used. You can set a description of what it does, and commands.
+                    I used the python-telegram-bot library, but you can also do your own API calls. Here is a sample bot that says hi.
+                </aside>
+            </section>
+            <section>
+                <img class="plain" src="files/mybot.png">
+            </section>
+            <section>
+                <img class="plain" src="files/sayinghi.png">
+            </section>
+            <section>
+                <h2>Cluj Real Estate Bot</h2>
+                <aside class="notes">
+                For my notifier bot you can go to my GitHub account, it's not much more complicated than this one, actually. 
+                It has commands to set different apartment properties (such a minimum/maximum price, rooms, surface), check out settings associated to you and subscribe/unsubscribe options.
+                Scrapy has the option to add custom behavior for certain events, like a scraper closing. When this happens, I trigger an action which filters through the latest scraped ads and retrieves the one that match the properties set by an user.
+                </aside>
+            </section>
+            <section>
+                <img class="plain" src="files/cjrent1.png">
+            </section>
+            <section>
+                <img class="plain" src="files/cjrent2.jpg">
+            </section>
+            <section>
+                How to run it
+                    <pre class="python"><code data-trim>
+nohup python bot.py &</code></pre> 
+                </ul>
+                <aside class="notes">
+                    Something that is not self obvious when building the bot is how you're going to run it. It runs idefinitely, polling for any message you send. You can even run it as a lambda. NBt to keep it simple, I run this command on a small dev server I own (where I host everything else as well).                    
+                </aside> 
+            </section>
+            <section>
+                And to sum it all up...
+                <p class="fragment" data-fragment-index="1">I found an apartment!</p>
+                <p class="fragment" data-fragment-index="2">...in less than 3 days!</p>
+                <p class="fragment" data-fragment-index="3">But did I get a good deal? <i class="em-svg em-thinking_face"></i><br> <a href="">Let's see the data!</a></p>
+                <aside class="notes">
+                    Saving the best for last... the system did actually find an suitable apartment for me, which I'm moving into next month!And it did it in less after 3 days after setting the Telegram bot online!
+
+                </aside>            
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [{
+                    src: 'plugin/markdown/marked.js'
+                },
+                {
+                    src: 'plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true
+                }
+            ],
+            controls: false,
+            defaultTiming: 10,
+            zoomKey: 'shift'
+        });
+    </script>
+</body>
+
+</html>
