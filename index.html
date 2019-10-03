@@ -60,9 +60,10 @@
                 <aside class="notes">
                     Let me introduce myself. I’m Daniela Craciun, but I usually go by Dana. 
                     I’m been working as a software engineer at Delivery Hero.
-                    I'm very passionate about Python, and the more I use it the more I'm fascinated how far it can take you.
-                    I usually work with web applications and cloud technologies, but this presentation has nothing to do with that.
+                    As most people here, I'm  passionate about Python, and I'm fascinated about all the thing it can do.
+                    I usually work with web applications and cloud stuff, but this presentation has nothing to do with that.
                     It's about a personal project I've been working on for a while now, which was an opportunity for me to play around with some interesting technologies.
+                    I'll 
                 </aside>
             </section>
             <section>
@@ -85,40 +86,27 @@
                 <li class="fragment" data-fragment-index="3"> Inspire </li>
                 <li class="fragment" data-fragment-index="4"> HAVE FUN! </li>
                 <br /><div class="fragment" data-fragment-index="5">... and maybe ...
-                <li class="fragment" data-fragment-index="6"> find an apartment for myself? <i class="em-svg em-mag"></i></li>
+                <li class="fragment" data-fragment-index="6"> find an apartment for myself?
                 </ul>
                  <aside class="notes">
                     You might be asking yourself: is this all just to find an apartment to rent?
                     
                     The main goal was to learn more, to grow and experiment. To inspire others to try and leverage their technical skills to delegate tasks to technology, or otherwise improve their lives through automation. To have fun, cause that's what side projects are all about! and maybe to even find an apartment, why not.
-                </aside>               
-            </section>
-            <section>
-                
-                <h2>also, DON'T expect</h2>
-                <div class="fragment" data-fragment-index="1">
-                <ul>
-                    <li>innovation (so many other options out there!)</li>
-                    <li>expert level knowledge</li>
-                </ul> 
-                </div>
-                
-                <h2 class="fragment" data-fragment-index="2">however, DO...</h2>
-                <div  class="fragment" data-fragment-index="3">
-                <ul>
-                    <li>give me advice on how to improve</li>
-                    <li>talk to me about your own data analysis projects</li>
-                    <li>use what you learn here</li>
-                </ul>
-                </div>
-                <aside class="notes">
+
                     I'm by no means an expert in any of the technologies mentioned here, I just built this for fun & (self) profit, so don't take it too seriously. 
                     I'm also aware that this has been done before, and there's other options out there, that automatize at least a part of the flow proposed by me. You can use page monitors, real estate websites & website aggregators for ads notifications and sometimes the government provides statistics about the real estate market. But finding an apartment was not the main goal here.
                     But do give me advice on anything you think I can improve & help me out. Also, use what I say/built it to build something of your own. That would make me very happy. 
+                </aside>               
+            </section>
+            <section>
+                <h2>Talk to me about data! <i class="em-svg em-left_speech_bubble"></i></h2>
+                <aside class="notes">
+                    But do talk to me about your data related project, I'm always passionate to find out more random facts and bits 
+                    about things that I will probably just use to make small talk in the future.
                 </aside>
             </section>
             <section>
-                What is this all about? 
+                <h3>What is this all about? </h3>
                 <br />
                 <br />
                 <div class="container">
@@ -138,14 +126,11 @@
                     From a data science perspective, I'm obtaining, scrubbing and exploring the data, so doing the work of a data analyst.
                     The next obvious steps would be modelling and interpreting, but since I only needed an understanding of the real estate market, not any forecasting, this was out of scope. The project is ready for and might move to the next 2 steps as well.
                 </aside>
-            </section>            
-            <section>
-                so, how did I do it?
             </section>
             <section>
                 <h2>Scraping</h2>
                 <aside class="notes">
-                    Who where has done any scraping before?
+                    Who has done any scraping before?
                     Data gathering was done by scraping a few selected websites which have real estate ads.
                     I started the data gathering around 6 months ago, and I'm currently gathering around 100 (mostly) unique ads per day.
                 </aside>
@@ -189,7 +174,7 @@
                     Scrapy gives you many ooportunities to customize the scrapers behavior, during and after the scraping has finished. I rely on it to format the data and store it as well.
                 </aside>            
             </section>
-            <section>
+<!--             <section>
                 <h2>Selectors</h2>
 <pre class="html"><code data-trim>
 <div>
@@ -208,7 +193,7 @@
                     But a few things to keep in mind, it's better to kkeep the concise & precise, shorter is better.
                     They are the bread & butter of my customer scraper. When using it, after inputting the XPaths for the required fields, more than 80% of the work is done.
                 </aside>                   
-            </section>
+            </section> -->
             <section>
                 <h2>Data fields</h2>
                 <div class="container">
@@ -250,6 +235,8 @@
                     <li> Timing influenced by need of alerting </li>
                 </ul>
                 <aside class="notes">
+                    Wanted to keep it super simple.
+
                     Created docker image for an individual scraper, and have each scraper running according to a set schedule in cronjobs. In total I am scraping 5 websites, with different frequency.
 
                     The schedule is set up in such a way that I get notification during the day, at hours at which it is still all right to contact the person posting the ad.When I wasn't expecting notifs, I was running during off-peak ours to minimize the load on the server.
@@ -269,9 +256,6 @@ DOWNLOAD_DELAY = 5
 AUTOTHROTTLE_ENABLED = True
 CLOSESPIDER_ITEMCOUNT = 100</code></pre> 
 <br><br>
-                <footer><small>
-                    <a href="https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy">Scrapinghub's polite scraping guide</a>
-                </footer></small>
                 <aside class="notes">
                     I got banned at first, since I was slamming the website servers.
                     Scrapy offers good methods of being nice while scraping, and offer a guide for polite scraping too. Basically,
@@ -300,11 +284,11 @@ CLOSESPIDER_ITEMCOUNT = 100</code></pre>
             <h2>Real estate ads say...</h2>
             </section>
             <section>
-            <h4> Vintage, but in very good condition! </h4>
+            <h4> In good condition! </h4>
             <img class="plain fragment" src="files/vintage.jpg" data-fragment-index="1">
             </section>
             <section>
-            <h4> Good area, close to the center! </h4>
+            <h4> Close to the center! </h4>
             <img class="plain fragment" src="files/lonely.jpg" data-fragment-index="1">
             </section>
             <section>
@@ -395,14 +379,34 @@ nohup python bot.py &</code></pre>
                 And to sum it all up...
                 <p class="fragment" data-fragment-index="1">I found an apartment!</p>
                 <p class="fragment" data-fragment-index="2">...in less than 3 days!</p>
-                <p class="fragment" data-fragment-index="3">But did I get a good deal? <i class="em-svg em-thinking_face"></i><br> <a href="https://danielacraciun.github.io/scrape-real-estate-cluj-stats/#/21">Let's see the data!</a></p>
+                <p class="fragment" data-fragment-index="3">But did I get a good deal? <i class="em-svg em-thinking_face"></i>
                 <aside class="notes">
                     Saving the best for last... the system did actually find an suitable apartment for me, which I'm moving into next month!And it did it in less after 3 days after setting the Telegram bot online!
 
                 </aside>            
             </section>
+             <section>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th>Price</th>
+                        <th>Price/sqm</th>
+                        <th>Surface</th>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Found apartment</b></td><td>420</td><td>6.46</td><td>65</td></tr>
+                        <tr><td><b>Average in Cluj-Napoca</b></td><td>479.28</td><td>8.35</td><td>59.37</td></tr>
+                        <tr><td><b>Average for similar apartments*</b></td><td>581.62</td><td>8.23</td><td>71.21</td></tr>
+                    </tbody>
+                </table>
+                <small>*3 rooms apartments in the same area</small>
+                <div>Also, there's <strong>0.13%</strong> other similar apartments</div>
+            <aside class="notes">
+                Less than 20 similar apartments, so quite a rare bargain!
+            </aside>
+            </section>
 	    <section id="the-end">
-		    <h4>So it is a good deal after all <i class="em-svg em-grin"></i></h4>
+		    <h4>So I did get a good deal after all <i class="em-svg em-grin"></i></h4>
 		    <h1> The end! </h1>
 	    </section>
         </div>
